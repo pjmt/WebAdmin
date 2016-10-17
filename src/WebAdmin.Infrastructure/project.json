@@ -8,6 +8,7 @@
       "version": "1.0.1",
       "type": "platform"
     },
+    "Microsoft.EntityFrameworkCore": "1.0.1",
     "System.Linq.Dynamic.Core": "1.0.6.5"
   },
 
