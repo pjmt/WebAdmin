@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E496914E-1FA2-4DDC-913E-76ECFC178D9C}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "WebAdmin.Infrastructure", "src\WebAdmin.Infrastructure\WebAdmin.Infrastructure.xproj", "{766EAFC4-52A5-4471-8FCB-B8B5E665AA92}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "WebAdmin.API", "src\WebAdmin.API\WebAdmin.API.xproj", "{63E59AAC-8892-432C-895B-27F26F35328D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{766EAFC4-52A5-4471-8FCB-B8B5E665AA92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{766EAFC4-52A5-4471-8FCB-B8B5E665AA92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{766EAFC4-52A5-4471-8FCB-B8B5E665AA92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{766EAFC4-52A5-4471-8FCB-B8B5E665AA92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63E59AAC-8892-432C-895B-27F26F35328D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63E59AAC-8892-432C-895B-27F26F35328D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63E59AAC-8892-432C-895B-27F26F35328D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63E59AAC-8892-432C-895B-27F26F35328D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{766EAFC4-52A5-4471-8FCB-B8B5E665AA92} = {E496914E-1FA2-4DDC-913E-76ECFC178D9C}
+		{63E59AAC-8892-432C-895B-27F26F35328D} = {E496914E-1FA2-4DDC-913E-76ECFC178D9C}
+	EndGlobalSection
+EndGlobal
