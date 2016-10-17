@@ -1,14 +1,10 @@
 using System;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebAdmin.Infrastructure.Models
 {
-    [Table("mpats_Organisation")]
     public class Organisation
     {
         public string SchemaIdentifier { get; set; }
-        [Key]
         public int OrganisationID { get; set; }
         public int? ParentOrganisationID { get; set; }
         public string OrganisationPassword { get; set; }
@@ -165,8 +161,6 @@ namespace WebAdmin.Infrastructure.Models
         public int? OfficeID { get; set; }
         public byte[] OrganisationVersion { get; set; }
         public byte? FeatureAutoHideDeletedUser { get; set; }
-
-        [ForeignKey("OrganisationStatusID")]
-        public virtual OrganisationStatus OrganisationStatus { get; set; }
+        public OrganisationStatus OrganisationStatus { get; set; }
     }
 }

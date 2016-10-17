@@ -1,4 +1,4 @@
-﻿{
+{
   "version": "1.0.0-*",
   "description": "WebAdmin",
   "authors": ["paul@logicmelon.com"],
@@ -9,6 +9,7 @@
       "type": "platform"
     },
     "Microsoft.EntityFrameworkCore": "1.0.1",
+    "Microsoft.EntityFrameworkCore.Relational": "1.0.1",
     "System.Linq.Dynamic.Core": "1.0.6.5"
   },
 

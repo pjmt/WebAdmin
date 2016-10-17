@@ -1,13 +1,9 @@
 using System;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebAdmin.Infrastructure.Models
 {
-    [Table("mpats_User")]
     public class User
     {
-        [Key]
         public int UserID { get; set; }
         public int OrganisationID { get; set; }
         public string UserIdentifier { get; set; }
@@ -114,11 +110,7 @@ namespace WebAdmin.Infrastructure.Models
         public string TheNeedleAccountKey { get; set; }
         public Nullable<bool> WatchDogsSendNoEmails { get; set; }
         public byte[] UserVersion { get; set; }
-
-        [ForeignKey("UserStatusID")]
-        public virtual UserStatus UserStatus { get; set; }
-
-        [ForeignKey("OrganisationID")]
-        public virtual Organisation Organisation { get; set; }
+        public UserStatus UserStatus { get; set; }
+        public Organisation Organisation { get; set; }
     }
 }
