@@ -18,23 +18,7 @@ namespace WebAdmin.Infrastructure.Context
                 .HasKey(o => o.OrganisationID);
 
             modelBuilder.Entity<Organisation>()
-                .HasOne(o => o.OrganisationStatus)
-                .WithOne()
-                .HasForeignKey("OrganisationStatusID");
-
-            modelBuilder.Entity<User>()
-                .ToTable("mpats_User")
-                .HasKey(u => u.UserID);
-
-            modelBuilder.Entity<User>()
-                .HasOne(u => u.UserStatus)
-                .WithOne()
-                .HasForeignKey("UserStatusID");
-
-            modelBuilder.Entity<User>()
-                .HasOne(u => u.Organisation)
-                .WithOne()
-                .HasForeignKey("OrganisationID");
+                .HasOne(o => o.OrganisationStatus);
 
             modelBuilder.Entity<OrganisationStatus>()
                 .Property(os => os.Description)
@@ -44,6 +28,16 @@ namespace WebAdmin.Infrastructure.Context
                 .ToTable("mpats_L_OrganisationStatus")
                 .HasKey(os => os.OrganisationStatusID);
 
+            modelBuilder.Entity<User>()
+                .ToTable("mpats_User")
+                .HasKey(u => u.UserID);
+
+            modelBuilder.Entity<User>()
+                .HasOne(u => u.UserStatus);
+
+            modelBuilder.Entity<User>()
+                .HasOne(u => u.Organisation);
+
             modelBuilder.Entity<UserStatus>()
                 .ToTable("mpats_L_UserStatus")
                 .HasKey(us => us.UserStatusID);
@@ -51,7 +45,7 @@ namespace WebAdmin.Infrastructure.Context
             modelBuilder.Entity<UserStatus>()
                 .Property(os => os.Description)
                 .HasColumnName("UserStatus");
-                
+
         }
     }
 }
