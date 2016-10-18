@@ -9,6 +9,18 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "WebAdmin.Infrastructure", "
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "WebAdmin.API", "src\WebAdmin.API\WebAdmin.API.xproj", "{63E59AAC-8892-432C-895B-27F26F35328D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B83FCCA5-9800-458D-9560-30D691B9D109}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{26A087E9-FF20-4BFD-8413-DF3BA9BFFA8A}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "WebAdmin.IntegrationTests", "tests\WebAdmin.IntegrationTests\WebAdmin.IntegrationTests.xproj", "{2E57924D-6D2C-4316-B7AF-6441E524C434}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "WebAdmin.UnitTests", "tests\WebAdmin.UnitTests\WebAdmin.UnitTests.xproj", "{C38D9B8C-1329-4E19-9DAE-B171EEA5E8E4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +35,14 @@ Global
 		{63E59AAC-8892-432C-895B-27F26F35328D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63E59AAC-8892-432C-895B-27F26F35328D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63E59AAC-8892-432C-895B-27F26F35328D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E57924D-6D2C-4316-B7AF-6441E524C434}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E57924D-6D2C-4316-B7AF-6441E524C434}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E57924D-6D2C-4316-B7AF-6441E524C434}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E57924D-6D2C-4316-B7AF-6441E524C434}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C38D9B8C-1329-4E19-9DAE-B171EEA5E8E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C38D9B8C-1329-4E19-9DAE-B171EEA5E8E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C38D9B8C-1329-4E19-9DAE-B171EEA5E8E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C38D9B8C-1329-4E19-9DAE-B171EEA5E8E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -30,5 +50,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{766EAFC4-52A5-4471-8FCB-B8B5E665AA92} = {E496914E-1FA2-4DDC-913E-76ECFC178D9C}
 		{63E59AAC-8892-432C-895B-27F26F35328D} = {E496914E-1FA2-4DDC-913E-76ECFC178D9C}
+		{2E57924D-6D2C-4316-B7AF-6441E524C434} = {26A087E9-FF20-4BFD-8413-DF3BA9BFFA8A}
+		{C38D9B8C-1329-4E19-9DAE-B171EEA5E8E4} = {26A087E9-FF20-4BFD-8413-DF3BA9BFFA8A}
 	EndGlobalSection
 EndGlobal
