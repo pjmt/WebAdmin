@@ -7,7 +7,7 @@ namespace WebAdmin.Infrastructure.Repositories
     using Context;
     using Models;
 
-    public class OrganisationRepository
+    public class OrganisationRepository : IOrganisationRepository
     {
         protected WebAdminContext databaseContext;
 
