@@ -10,31 +10,31 @@ using WebAdmin.Infrastructure.Repositories;
 namespace WebAdmin.API.Controllers
 {
     [Route("[controller]")]
-    public class Organisations : Controller
+    public class Users : Controller
     {
+        private readonly IUserRepository repository;
+
         const int MaxPageSize = 100;
 
-        protected readonly IOrganisationRepository repository;
-
-        public Organisations(IOrganisationRepository repository)
+        public Users(IUserRepository repository)
         {
             this.repository = repository;
         }
 
         [HttpGet]
-        public IActionResult Get(string sort = "OrganisationID", string name = null, byte? statusID = null, int page = 1, int pageSize = MaxPageSize)
+        public IActionResult Get(string sort = "UserID", string name = null, byte? statusID = null, int page = 1, int pageSize = MaxPageSize)
         {
             try
             {
-                var organisations = repository.GetOrganisations()
+                var users = repository.GetUsers()
                     .ApplySort(sort)
-                    .Where(o => (name == null || o.OrganisationName.Contains(name)))
-                    .Where(o => (statusID == null || o.OrganisationStatusID == statusID));
+                    .Where(u => (name == null || u.FullName.Contains(name)))
+                    .Where(u => (statusID == null || u.UserStatusID == statusID));
 
                 if (pageSize > MaxPageSize) pageSize = MaxPageSize;
 
-                // calculate data for metadata
-                var totalCount = organisations.Count();
+                // Calculate data for metadata
+                var totalCount = users.Count();
                 var totalPages = (int)Math.Ceiling((double)totalCount / pageSize);
 
                 var urlHelper = new UrlHelper(ControllerContext);
@@ -72,7 +72,7 @@ namespace WebAdmin.API.Controllers
                 HttpContext.Response.Headers.Add("X-Pagination",
                    Newtonsoft.Json.JsonConvert.SerializeObject(paginationHeader));
 
-                return Ok(organisations
+                return Ok(users
                     .Skip(pageSize * (page - 1))
                     .Take(pageSize)
                     .ToList());
@@ -88,32 +88,12 @@ namespace WebAdmin.API.Controllers
         {
             try
             {
-                var organisation = repository.GetOrganisation(id);
+                var user = repository.GetUser(id);
 
-                if (organisation == null)
+                if (user == null)
                     return NotFound();
                 else
-                    return Ok(organisation);
-            }
-            catch (Exception)
-            {
-                return StatusCode(500);
-            }
-        }
-
-        [HttpGet("{parentOrganisationID}/children")]
-        public IActionResult GetChildren(int parentOrganisationID)
-        {
-            try
-            {
-                var organisations = repository.GetChildOrganisations(parentOrganisationID);
-
-                if (!organisations.Any())
-                {
-                    return NotFound();
-                }
-
-                return Ok(organisations.ToList());
+                    return Ok(user);
             }
             catch (Exception)
             {
