@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Threading.Tasks;
 
 namespace WebAdmin.Infrastructure.Repositories
 {
@@ -8,5 +9,7 @@ namespace WebAdmin.Infrastructure.Repositories
     {
         User GetUser(int userID);
         IQueryable<User> GetUsers();
+
+        Task<User> GetUserAsync(int userID);
     }
 }

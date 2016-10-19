@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace WebAdmin.Infrastructure.Repositories
 {
@@ -22,6 +23,16 @@ namespace WebAdmin.Infrastructure.Repositories
                 .Where(u => u.UserID == id)
                 .Include(u => u.UserStatus)
                 .FirstOrDefault();
+        }
+
+        public async Task<User> GetUserAsync(int id)
+        {
+            var user = await databaseContext.Users
+                .Where(u => u.UserID == id)
+                .Include(u => u.UserStatus)
+                .SingleOrDefaultAsync();
+
+            return user;
         }
 
         public IQueryable<User> GetUsers()
