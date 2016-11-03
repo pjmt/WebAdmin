@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Threading.Tasks;
 
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Routing;
@@ -84,11 +85,11 @@ namespace WebAdmin.API.Controllers
         }
 
         [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        public async Task<IActionResult> Get(int id)
         {
             try
             {
-                var organisation = repository.GetOrganisation(id);
+                var organisation = await repository.GetOrganisation(id);
 
                 if (organisation == null)
                     return NotFound();

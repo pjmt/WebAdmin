@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace WebAdmin.Infrastructure.Repositories
 {
@@ -16,12 +17,12 @@ namespace WebAdmin.Infrastructure.Repositories
             databaseContext = context;
         }
 
-        public Organisation GetOrganisation(int id)
+        public async Task<Organisation> GetOrganisation(int id)
         {
-            return databaseContext.Organisations
+            return await databaseContext.Organisations
                 .Where(o => o.OrganisationID == id)
                 .Include(org => org.OrganisationStatus)
-                .FirstOrDefault();
+                .SingleOrDefaultAsync();
         }
 
         public IQueryable<Organisation> GetOrganisations()

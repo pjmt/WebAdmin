@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Threading.Tasks;
 
 namespace WebAdmin.Infrastructure.Repositories
 {
@@ -6,7 +7,7 @@ namespace WebAdmin.Infrastructure.Repositories
 
     public interface IOrganisationRepository
     {
-        Organisation GetOrganisation(int id);
+        Task<Organisation> GetOrganisation(int id);
         IQueryable<Organisation> GetOrganisations();
         IQueryable<Organisation> GetChildOrganisations(int parentOrganisationID);
     }

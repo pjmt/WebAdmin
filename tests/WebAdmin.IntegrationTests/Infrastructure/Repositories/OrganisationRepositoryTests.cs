@@ -4,6 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 
 using WebAdmin.Infrastructure.Context;
 using WebAdmin.Infrastructure.Models;
@@ -45,26 +46,26 @@ namespace WebAdmin.IntegrationTests.Infrastructure.Repositories
         }
 
         [TestMethod]
-        public void GetOrganisation_When_organisationID_is_invalid_Then_Repository_should_return_default_Organisation()
+        public async Task GetOrganisation_When_organisationID_is_invalid_Then_Repository_should_return_default_Organisation()
         {
             // Arrange
             var repository = new OrganisationRepository(databaseContext);
 
             // Act
-            var result = repository.GetOrganisation(-OrganisationID);
+            var result = await repository.GetOrganisation(-OrganisationID);
 
             // Assert
             Assert.AreEqual(default(Organisation), result);
         }
 
         [TestMethod]
-        public void GetOrganisation_When_organisationID_is_valid_Then_Repository_should_return_Organisation()
+        public async Task GetOrganisation_When_organisationID_is_valid_Then_Repository_should_return_Organisation()
         {
             // Arrange
             var repository = new OrganisationRepository(databaseContext);
 
             // Act
-            var result = repository.GetOrganisation(OrganisationID);
+            var result = await repository.GetOrganisation(OrganisationID);
 
             // Assert
             Assert.AreEqual("Demo Agency ", result.OrganisationName);
