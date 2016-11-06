@@ -89,7 +89,7 @@ namespace WebAdmin.API.Controllers
         {
             try
             {
-                var user = await repository.GetUserAsync(id);
+                var user = await repository.GetUser(id);
 
                 if (user == null)
                     return NotFound();

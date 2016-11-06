@@ -46,53 +46,26 @@ namespace WebAdmin.IntegrationTests.Infrastructure.Repositories
         }
 
         [TestMethod]
-        public void GetUser_When_userID_is_invalid_Then_Repository_should_return_default_User()
+        public async Task GetUser_When_userID_is_invalid_Then_Repository_should_return_default_User()
         {
             // Arrange
             var repository = new UserRepository(databaseContext);
 
             // Act
-            var result = repository.GetUser(-UserID);
+            var result = await repository.GetUser(-UserID);
 
             // Assert
             Assert.AreEqual(default(User), result);
         }
 
         [TestMethod]
-        public void GetUser_When_userID_is_valid_Then_Repository_should_return_User()
+        public async Task GetUser_When_userID_is_valid_Then_Repository_should_return_User()
         {
             // Arrange
             var repository = new UserRepository(databaseContext);
 
             // Act
-            var result = repository.GetUser(UserID);
-
-            // Assert
-            Assert.AreEqual("Joe Smith", result.FullName);
-            Assert.AreEqual("Active", result.UserStatus.Description);
-        }
-
-        [TestMethod]
-        public async Task GetUserAsync_When_userID_is_invalid_Then_Repository_should_return_default_User()
-        {
-            // Arrange
-            var repository = new UserRepository(databaseContext);
-
-            // Act
-            var result = await repository.GetUserAsync(-UserID);
-
-            // Assert
-            Assert.AreEqual(default(User), result);
-        }
-
-        [TestMethod]
-        public async Task GetUserAsync_When_userID_is_valid_Then_Repository_should_return_User()
-        {
-            // Arrange
-            var repository = new UserRepository(databaseContext);
-
-            // Act
-            var result = await repository.GetUserAsync(UserID);
+            var result = await repository.GetUser(UserID);
 
             // Assert
             Assert.AreEqual("Joe Smith", result.FullName);

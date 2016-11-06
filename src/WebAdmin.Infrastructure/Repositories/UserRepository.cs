@@ -17,15 +17,7 @@ namespace WebAdmin.Infrastructure.Repositories
             databaseContext = context;
         }
 
-        public User GetUser(int id)
-        {
-            return databaseContext.Users
-                .Where(u => u.UserID == id)
-                .Include(u => u.UserStatus)
-                .FirstOrDefault();
-        }
-
-        public async Task<User> GetUserAsync(int id)
+        public async Task<User> GetUser(int id)
         {
             var user = await databaseContext.Users
                 .Where(u => u.UserID == id)
