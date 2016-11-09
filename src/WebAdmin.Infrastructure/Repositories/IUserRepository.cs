@@ -7,7 +7,7 @@ namespace WebAdmin.Infrastructure.Repositories
 
     public interface IUserRepository
     {
-        Task<User> GetUser(int userID);
+        Task<User> GetUserAsync(int userID);
         IQueryable<User> GetUsers();
     }
 }

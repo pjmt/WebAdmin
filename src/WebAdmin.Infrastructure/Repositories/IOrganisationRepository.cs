@@ -7,7 +7,7 @@ namespace WebAdmin.Infrastructure.Repositories
 
     public interface IOrganisationRepository
     {
-        Task<Organisation> GetOrganisation(int id);
+        Task<Organisation> GetOrganisationAsync(int id);
         IQueryable<Organisation> GetOrganisations();
         IQueryable<Organisation> GetChildOrganisations(int parentOrganisationID);
     }

@@ -89,7 +89,7 @@ namespace WebAdmin.API.Controllers
         {
             try
             {
-                var organisation = await repository.GetOrganisation(id);
+                var organisation = await repository.GetOrganisationAsync(id);
 
                 if (organisation == null)
                     return NotFound();

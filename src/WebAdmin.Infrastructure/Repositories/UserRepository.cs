@@ -17,7 +17,7 @@ namespace WebAdmin.Infrastructure.Repositories
             databaseContext = context;
         }
 
-        public async Task<User> GetUser(int id)
+        public async Task<User> GetUserAsync(int id)
         {
             var user = await databaseContext.Users
                 .Where(u => u.UserID == id)

@@ -17,7 +17,7 @@ namespace WebAdmin.Infrastructure.Repositories
             databaseContext = context;
         }
 
-        public async Task<Organisation> GetOrganisation(int id)
+        public async Task<Organisation> GetOrganisationAsync(int id)
         {
             return await databaseContext.Organisations
                 .Where(o => o.OrganisationID == id)
